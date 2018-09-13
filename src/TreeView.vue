@@ -1,6 +1,6 @@
 <template>
   <div class="tree-view-wrapper">
-    <tree-view-item class="tree-view-item-root" :data="parsedData" :max-depth="allOptions.maxDepth" :current-depth="0" :modifiable="allOptions.modifiable" :link="allOptions.link" @change-data="onChangeData"></tree-view-item>
+    <tree-view-item class="tree-view-item-root" :data="parsedData" :hide-name="allOptions.hideName" :max-depth="allOptions.maxDepth" :current-depth="allOptions.hideName ? -1 : 0" :modifiable="allOptions.modifiable" :link="allOptions.link" @change-data="onChangeData"></tree-view-item>
   </div>
 </template>
 
@@ -24,6 +24,7 @@
           type: "value",
           value: valueToTransform
         }
+        // return valueToTransform
       },
 
     	// Since we use lodash, the _.map method will work on
@@ -97,7 +98,8 @@
           rootObjectKey:  "root",
           maxDepth:       4,
           modifiable:     false,
-          link: false
+          link: false,
+          hideName: false
         }, (this.options || {}) )
       },
     	parsedData: function(){

@@ -37,7 +37,7 @@
                 <pre><code>{{sampleJSONArray}}</code></pre>
               </div>
               <div class="col-sm-6">
-                <tree-view :data="sampleJSONArray" :options="{maxDepth: 2, rootObjectKey: 'The Test Array', link: true}"></tree-view>
+                <tree-view :data="sampleJSONArray" :options="{maxDepth: 2, rootObjectKey: 'The Test Array', link: true,  hideName: true}"></tree-view>
               </div>
             </div>
 
@@ -47,7 +47,7 @@
                 <pre><code>{{sampleJSON}}</code></pre>
               </div>
               <div class="col-sm-6">
-                <tree-view :data="sampleJSON" :options="{maxDepth: 0, rootObjectKey: 'The named Object'}"></tree-view>
+                <tree-view :data="sampleJSON" :options="{maxDepth: 0, rootObjectKey: 'The named Object', hideName: true}"></tree-view>
               </div>
             </div>
 
